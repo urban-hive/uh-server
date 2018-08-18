@@ -1,17 +1,44 @@
 definitions:
-  foo:
-    type: object
-    properties:
-      id:
-        type: string
-        description: id
-        required: true
-        example: id
-parameters:
-  bar:
+  dust:
     type: object
     properties:
       id:
         type: integer
         description: id
-        example: 2
+        required: true
+        example: 1
+      pm:
+        type: number
+        description: 미세먼지 농도
+        required: true
+        example: 14.543215
+      measured_date:
+        type: string
+        description: 측정 시간
+        required: true
+        example: 2018.11.11 11:11:11
+  response_message:
+    type: object
+    properties:
+      message:
+        type: string
+        description: 메시지
+        example: message
+      content:
+        type: any
+        description: 응답 내용
+        example: 성공
+parameters:
+  dust:
+    type: object
+    properties:
+      pm:
+        type: number
+        description: 미세먼지 농도
+        required: true
+        example: 14.543215
+      measured_date:
+        type: string
+        description: 측정 시간
+        required: true
+        example: 2018.11.11 11:11:11
