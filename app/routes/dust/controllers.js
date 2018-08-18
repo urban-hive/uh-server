@@ -34,7 +34,7 @@ const getDustList = async ctx => {
  *      - name: dust
  *        in: body
  *        required: true
- *        description: 상점 정보
+ *        description: 미세먼지 정보
  *        type: object
  *        schema:
  *          $ref: '#/parameters/dust'
