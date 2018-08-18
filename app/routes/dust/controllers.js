@@ -64,4 +64,24 @@ const insertDust = async ctx => {
   return ctx.send(201, { message: 'success', content: dust.toJSON() });
 };
 
-module.exports = { getDustList, insertDust };
+const getChart = async ctx => {
+  const page = await ctx.render('chart.ejs');
+  return page;
+};
+
+const getChartData = async ctx => {
+  const dustList = await Dust.findAll();
+  return ctx.send(200, {
+    dustlist: dustList.map(dust => {
+      const dustJson = dust.toJSON();
+      return {
+        chkpmValue: dustJson.pm,
+        mdatecreated: dustJson.measured_date,
+        pm25Value: 2.5,
+        pm10Value: 10
+      };
+    })
+  });
+};
+
+module.exports = { getDustList, insertDust, getChart, getChartData };
