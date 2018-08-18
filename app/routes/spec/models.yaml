@@ -1,0 +1,17 @@
+definitions:
+  foo:
+    type: object
+    properties:
+      id:
+        type: string
+        description: id
+        required: true
+        example: id
+parameters:
+  bar:
+    type: object
+    properties:
+      id:
+        type: integer
+        description: id
+        example: 2

@@ -1,0 +1,46 @@
+{
+  "name": "uh-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^5.2.0",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-prettier": "^2.6.2",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.3",
+    "prettier": "^1.14.0",
+    "supertest": "^3.1.0"
+  },
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "date-utils": "^1.2.21",
+    "dotenv": "^6.0.0",
+    "kcors": "^2.2.2",
+    "koa": "^2.5.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-ejs": "^4.1.2",
+    "koa-respond": "^1.0.1",
+    "koa-router": "^7.4.0",
+    "koa-views": "^6.1.4",
+    "koa-views-render": "^0.0.1",
+    "koa2-swagger-ui": "^2.9.3",
+    "koa2-winston": "^2.4.1",
+    "pm2": "^3.0.3",
+    "swagger-jsdoc": "^1.10.3",
+    "winston": "^2.4.2",
+    "winston-daily-rotate-file": "^3.2.3"
+  },
+  "scripts": {
+    "dev": "./node_modules/.bin/cross-env NODE_ENV=development ./node_modules/.bin/nodemon index.js",
+    "prd": "./node_modules/.bin/cross-env NODE_ENV=production ./node_modules/.bin/pm2 start index.js",
+    "prd:stat": "./node_modules/.bin/pm2 show index.js",
+    "prd:kill": "./node_modules/.bin/pm2 kill",
+    "prettier": "./node_modules/.bin/prettier --config .prettierrc.js --write",
+    "prd:restart": "yarn prd:kill && yarn && yarn prd",
+    "test": "./node_modules/.bin/mocha tests --recursive -w"
+  }
+}
