@@ -12,6 +12,6 @@ const router = new Router();
 router.get('/', getDustList);
 router.post('/', insertDust);
 router.get('/chart', getChart);
-router.post('/chart', getChartData);
+router.get('/chart/data', getChartData);
 
 module.exports = router;

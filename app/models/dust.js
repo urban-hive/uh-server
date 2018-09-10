@@ -7,7 +7,12 @@ module.exports = (sequelize, DataType) => {
         primaryKey: true,
         autoIncrement: true
       },
-      pm: {
+      pm10_value: {
+        type: DataType.DOUBLE,
+        allowNull: true,
+        defaultValue: 0
+      },
+      pm25_value: {
         type: DataType.DOUBLE,
         allowNull: false,
         defaultValue: 0
