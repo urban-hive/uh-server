@@ -45,6 +45,6 @@
     "prd:kill": "./node_modules/.bin/pm2 kill",
     "prettier": "./node_modules/.bin/prettier --config .prettierrc.js --write",
     "prd:restart": "yarn prd:kill && yarn && yarn prd",
-    "test": "./node_modules/.bin/mocha tests --recursive -w"
+    "test": "./node_modules/.bin/cross-env NODE_ENV=test ./node_modules/.bin/mocha tests --recursive -w"
   }
 }
