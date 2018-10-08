@@ -1,5 +1,5 @@
 const {CronJob} = require('cron');
-const db = require('./app/models');
+const db = require('../app/models');
 
 const getRandom = (min, max) => Math.random() * (max - min) + min
 
